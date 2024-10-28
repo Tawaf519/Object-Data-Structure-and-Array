@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object and Array Example</title>
+    <script>
+        // Create an object representing a person
+        const person1 = {
+            name: "Alice",
+            age: 30,
+            city: "New York"
+        };
+
+        const person2 = {
+            name: "Bob",
+            age: 25,
+            city: "Los Angeles"
+        };
+
+        // Create an array of person objects
+        const people = [person1, person2];
+
+        function displayPeople() {
+            const output = document.getElementById("output");
+
+            // Clear previous content
+            output.innerHTML = "";
+
+            // Iterate through the array and display each person's information
+            people.forEach(person => {
+                const personInfo = `Name: ${person.name}, Age: ${person.age}, City: ${person.city}`;
+                const paragraph = document.createElement("p");
+                paragraph.innerText = personInfo;
+                output.appendChild(paragraph);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>People Information</h1>
+    <button onclick="displayPeople()">Show People</button>
+    <div id="output"></div>
+</body>
+</html>
